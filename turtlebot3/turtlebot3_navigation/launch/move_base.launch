@@ -16,8 +16,8 @@
       <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
       
       <!-- Load costmap parameters with the proper namespace -->
-      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
-      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
       <rosparam file="$(find turtlebot3_navigation)/param/local_costmap_params.yaml" command="load" />
       <rosparam file="$(find turtlebot3_navigation)/param/global_costmap_params.yaml" command="load" />
       <rosparam file="$(find turtlebot3_navigation)/param/move_base_params.yaml" command="load" />
@@ -38,4 +38,3 @@
     </node>
   </group>
 </launch>
-
